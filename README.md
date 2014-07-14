@@ -1,3 +1,4 @@
-The OpenShift `jbossas` cartridge documentation can be found at:
+sje
+===
 
-https://github.com/openshift/origin-server/tree/master/cartridges/openshift-origin-cartridge-jbossas/README.md
+Projeto de propriedade da empresa SJE ArCondicionados
