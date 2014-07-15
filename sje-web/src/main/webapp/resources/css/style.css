@@ -1,3 +1,7 @@
+body{
+    background-image: URL("#{resource['images:background.jpg']}");
+}
+
 .center{
     left: 50%;
     position: absolute !important;
@@ -5,3 +9,36 @@
     margin-left: -305px;
     margin-top: -115px;
 }
+
+.header{
+    position: relative !important;
+    background-repeat: no-repeat;
+    background-image: URL("#{resource['images:background_header.png']}");
+    width: 1050px;
+    height: 200px;
+}
+
+.cards{
+    width: 100px;
+    height: 100px;
+    position: absolute !important;
+    right: 218px;
+    top: -15px;
+}
+
+.card{
+    width: 100px;
+    height: 80px;
+}
+
+.container{
+    width: 1050px;
+    margin-left: 15%;
+}
+
+.menu{
+    position: absolute !important;
+    bottom: 0;
+}
+
+

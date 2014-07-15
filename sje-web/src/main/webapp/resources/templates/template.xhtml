@@ -8,10 +8,15 @@
       xmlns:p="http://primefaces.org/ui">
 <f:view>
     <h:head>
-        <h:outputStylesheet library="css" name="style.css" />
+        <h:outputStylesheet library="css" name="style.css"/>
     </h:head>
     <h:body>
-        <ui:insert name="pageContent" />
+        <div class="container">
+            <h:form>
+                <ui:insert name="pageHeader"/>
+                <ui:insert name="pageContent"/>
+            </h:form>
+        </div>
     </h:body>
 </f:view>
 </html>
