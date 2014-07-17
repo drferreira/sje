@@ -12,7 +12,7 @@ import java.util.List;
  */
 @ViewScoped
 @Named
-public class WelcomeGallery implements Serializable {
+public class WelcomeGalleryController implements Serializable {
 
     private List<String> galleryImages;
 
@@ -20,7 +20,10 @@ public class WelcomeGallery implements Serializable {
     public void setUp(){
         galleryImages = new ArrayList<>();
         galleryImages.add("ar_conditioner.png");
+        galleryImages.add("external.jpg");
         galleryImages.add("installation.jpg");
+        galleryImages.add("quality_life.png");
+        galleryImages.add("residential.jpg");
         galleryImages.add("split.jpg");
     }
 

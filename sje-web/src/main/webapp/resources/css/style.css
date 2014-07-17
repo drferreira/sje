@@ -2,13 +2,6 @@ body{
     background-image: URL("#{resource['images:background.jpg']}");
 }
 
-.center{
-    left: 50%;
-    position: absolute !important;
-    top: 50%;
-    margin-left: -305px;
-    margin-top: -115px;
-}
 
 .header{
     position: relative !important;
@@ -26,6 +19,21 @@ body{
     top: -15px;
 }
 
+.contact_info{
+    position: absolute !important;
+    right: 10px;
+    top: 120px;
+    font-family: Verdana, Geneva, sans-serif;
+    font-weight: bold;
+}
+
+.contact_info_text{
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: x-large !important;
+    font-weight: bold;
+    color: white;
+}
+
 .card{
     width: 100px;
     height: 80px;
@@ -33,7 +41,7 @@ body{
 
 .container{
     width: 1050px;
-    margin-left: 15%;
+    margin-left: 22%;
 }
 
 .menu{

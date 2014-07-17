@@ -11,11 +11,23 @@
 
     <ui:define name="pageHeader">
         <div class="header">
-            <h:panelGrid columns="3" styleClass="cards" >
+            <p:commandLink id="adminButton" ajax="false" action="#{welcomeMenuController.openAdminSession()}"
+                           update="messages">
+                <p:graphicImage library="images" name="admin_button.png" style="width: 25px; height: 25px"/>
+            </p:commandLink>
+
+            <h:panelGrid columns="3" styleClass="cards">
                 <p:graphicImage name="images/cards/visa.png" class="card"/>
                 <p:graphicImage name="images/cards/mastercard.png" class="card"/>
                 <p:graphicImage name="images/cards/visa.png" class="card"/>
             </h:panelGrid>
+
+            <div class="contact_info">
+                <h:panelGrid columns="1">
+                    <h:outputText value="#{welcome['welcome.contact.phone.one']}" styleClass="contact_info_text"/>
+                    <h:outputText value="#{welcome['welcome.contact.phone.two']}" styleClass="contact_info_text"/>
+                </h:panelGrid>
+            </div>
 
             <div class="menu">
                 <p:commandButton value="Empresa"/>
@@ -25,45 +37,56 @@
     </ui:define>
 
     <ui:define name="pageContent">
-        <p:galleria var="imageGallery" value="#{welcomeGallery.galleryImages}" showCaption="true" panelWidth="1050"
+        <p:galleria var="imageGallery" value="#{welcomeGalleryController.galleryImages}" showCaption="true"
+                    panelWidth="1050"
                     panelHeight="200">
             <p:graphicImage name="images/gallery/#{imageGallery}" title="#{imageGallery}"
-                            alt="Comentario para #{imageGallery}"/>
+                            alt="#{welcome['gallery.description.'.concat(imageGallery)]}"/>
         </p:galleria>
 
-        <h:panelGrid columns="2">
-            <p:panel header="Split" style="width: 700px">
+        <h:panelGrid columns="1">
+            <h:panelGrid columns="2">
+                <p:panel header="Quem somos nós ..." style="width: 700px; height: 311px">
+                    <h:panelGrid columns="2" cellpadding="10">
+                        <p:graphicImage name="images/sje_logo.jpg"/>
+                        <h:outputText
+                                value="#{welcome['description.split']}"/>
+                    </h:panelGrid>
+                </p:panel>
+
+                <p:panel header="Contato" style="width: 335px; height: 311px">
+                    <p:outputLabel value="#{welcome['welcome.message']}" escape="false" style="font-size: larger"/>
+                    <br/>
+                    <p:spacer width="25"/>
+                    <br/>
+                    <h:panelGrid columns="2">
+                        <p:inputText id="clientName" maxlength="30" size="30"/>
+                        <p:watermark value="#{welcome['client.name']}" for="clientName"/>
+
+                        <p:inputText id="clientEmail" maxlength="45" size="45"/>
+                        <p:watermark value="#{welcome['client.email']}" for="clientEmail"/>
+
+                        <p:inputMask id="clientPhone" mask="(99) 9909-9999"/>
+                        <p:watermark value="#{welcome['client.phone']}" for="clientPhone"/>
+
+                        <p:inputTextarea id="message" maxlength="500" cols="37"/>
+                        <p:watermark value="#{welcome['client.message']}" for="message"/>
+                        <h:panelGrid columns="2">
+                            <p:commandButton value="Enviar"/>
+                            <p:commandButton value="Limpar"/>
+                        </h:panelGrid>
+                    </h:panelGrid>
+                </p:panel>
+            </h:panelGrid>
+            <p:panel header="Slipt">
                 <h:panelGrid columns="2" cellpadding="10">
                     <p:graphicImage name="images/descriptions/split.jpg"/>
                     <h:outputText
                             value="#{welcome['description.split']}"/>
                 </h:panelGrid>
             </p:panel>
-
-            <p:panel header="Contato" style="width: 330px; height: 311px">
-                <p:outputLabel value="#{welcome['welcome.message']}" escape="false" style="font-size: larger"/>
-                <br/>
-                <p:spacer width="25"/>
-                <br/>
-                <h:panelGrid columns="2">
-                    <p:inputText id="clientName" maxlength="30" size="30"/>
-                    <p:watermark value="#{welcome['client.name']}" for="clientName"/>
-
-                    <p:inputText id="clientEmail" maxlength="45" size="45"/>
-                    <p:watermark value="#{welcome['client.email']}" for="clientEmail"/>
-
-                    <p:inputMask id="clientPhone" mask="(99) 9909-9999"/>
-                    <p:watermark value="#{welcome['client.phone']}" for="clientPhone"/>
-
-                    <p:inputTextarea id="message" maxlength="500" cols="37"/>
-                    <p:watermark value="#{welcome['client.message']}" for="message" />
-                    <h:panelGrid columns="2">
-                        <p:commandButton value="Enviar"/>
-                        <p:commandButton value="Limpar"/>
-                    </h:panelGrid>
-                </h:panelGrid>
-            </p:panel>
         </h:panelGrid>
+
 
     </ui:define>
 
