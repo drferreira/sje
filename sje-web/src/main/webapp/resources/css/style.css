@@ -19,6 +19,12 @@ body{
     top: -15px;
 }
 
+.adminButton{
+    position: absolute !important;
+    top: 40px;
+}
+
+
 .contact_info{
     position: absolute !important;
     right: 10px;
@@ -34,6 +40,10 @@ body{
     color: white;
 }
 
+.text_description{
+    font-size: medium;
+}
+
 .card{
     width: 100px;
     height: 80px;
@@ -43,10 +53,4 @@ body{
     width: 1050px;
     margin-left: 22%;
 }
-
-.menu{
-    position: absolute !important;
-    bottom: 0;
-}
-
 

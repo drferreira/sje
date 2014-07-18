@@ -13,5 +13,9 @@
             <base-name>properties/welcome</base-name>
             <var>welcome</var>
         </resource-bundle>
+        <resource-bundle>
+            <base-name>properties/messages</base-name>
+            <var>message</var>
+        </resource-bundle>
     </application>
 </faces-config>
