@@ -19,7 +19,6 @@ public class WelcomeGalleryController implements Serializable {
     @PostConstruct
     public void setUp(){
         galleryImages = new ArrayList<>();
-        galleryImages.add("ar_conditioner.png");
         galleryImages.add("external.jpg");
         galleryImages.add("installation.jpg");
         galleryImages.add("quality_life.png");
